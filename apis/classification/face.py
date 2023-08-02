@@ -2,6 +2,7 @@ from flask_restx import Resource, Namespace
 from werkzeug.datastructures import FileStorage
 from PIL import Image
 import numpy as np
+from logger import logger
 
 face_classif = Namespace("Face Classification","Yolov7 face classification")
 
@@ -18,4 +19,5 @@ class Upload(Resource):
         args = upload_parser.parse_args()
         uploaded_file = args['file']  # This is FileStorage instance
         img = np.array(Image.open(uploaded_file))
+        logger.info({'filename':uploaded_file.filename,'size': img.shape, "task":"classification"})
         return {'size': img.shape, "task":"classification"}, 201
