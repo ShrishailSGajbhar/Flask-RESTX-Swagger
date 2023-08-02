@@ -8,3 +8,5 @@
 * In `__init__.py` file of the `apis` folder, create the api object using the `flask_restx` packages `Api` class. Also create the blueprint object (a collection of routes and other app-related functions that can be registered on a real application later) using the `Blueprint` class of the `flask` library.
 * Add the namespaces to the api object created above.
 * Within the `app.py`, create a `Flask` object usually called as the `app`. Import the blueprint object from the `apis` module and register the blueprint object to the app object.
+
+![Swagger UI](./swagger_ui.png)
